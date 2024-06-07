@@ -1,11 +1,10 @@
-import Button from '@mui/material/Button'
+import ModeSys from './components/ModeSys'
 
 function App() {
 
-
   return (
     <>
-      <Button variant="contained">Hello world</Button>
+      <ModeSys />
     </>
   )
 }
