@@ -7,13 +7,25 @@ const theme = extendTheme({
     light: {
       palette: {
         primary: teal,
-        secondary: deepOrange
+        secondary: deepOrange,
+        background: {
+          default: '#2c3e50'
+        },
+        text: {
+          primary: '#ecf0f1'
+        }
       }
     },
     dark: {
       palette: {
         primary: cyan,
-        secondary: orange
+        secondary: orange,
+        background: {
+          default: '#2c3e50'
+        },
+        text: {
+          primary: '#ecf0f1'
+        }
       }
     }
   }
