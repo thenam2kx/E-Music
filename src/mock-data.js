@@ -5,7 +5,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'nho-gia-dinh-remix.mp3',
+    'url': '../../audios/nho-gia-dinh-remix.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -15,7 +15,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'nho-gia-dinh.mp3',
+    'url': '../../audios/nho-gia-dinh.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -25,7 +25,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'phia-sau-to-dola.mp3',
+    'url': '../../audios/phia-sau-to-dola.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -35,7 +35,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'com-doan-vien.mp3',
+    'url': '../../audios/com-doan-vien.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -45,7 +45,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'con-trai-cung.mp3',
+    'url': '../../audios/con-trai-cung.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -55,7 +55,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'khoc-mot-minh.mp3',
+    'url': '../../audios/khoc-mot-minh.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -65,7 +65,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'hoa-no-ben-duong.mp3',
+    'url': '../../audios/hoa-no-ben-duong.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -75,7 +75,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'sau-loi-tu-khuoc.m4a',
+    'url': '../../audios/sau-loi-tu-khuoc.m4a',
     'genre': 'Pop',
     'duration': ''
   },
@@ -85,7 +85,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'mua-thang-sau.m4a',
+    'url': '../../audios/mua-thang-sau.m4a',
     'genre': 'Pop',
     'duration': ''
   },
@@ -95,7 +95,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'lung-lo.m4a',
+    'url': '../../audios/lung-lo.m4a',
     'genre': 'Pop',
     'duration': ''
   },
@@ -105,7 +105,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'loi-tam-biet-chua-noi.m4a',
+    'url': '../../audios/loi-tam-biet-chua-noi.m4a',
     'genre': 'Pop',
     'duration': ''
   },
@@ -115,7 +115,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'lan-cuoi.mp3',
+    'url': '../../audios/lan-cuoi.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -125,7 +125,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'hoa-no-khong-mau.mp3',
+    'url': '../../audios/hoa-no-khong-mau.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -135,7 +135,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'ai-roi-cung-se-khac.mp3',
+    'url': '../../audios/ai-roi-cung-se-khac.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -145,7 +145,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'co-don-tren-sofa.mp3',
+    'url': '../../audios/co-don-tren-sofa.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -155,7 +155,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'co-mot-nguoi-van-doi.mp3',
+    'url': '../../audios/co-mot-nguoi-van-doi.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -165,7 +165,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'cu-voi-vang.mp3',
+    'url': '../../audios/cu-voi-vang.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -175,7 +175,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'cuoc-vui-co-don.mp3',
+    'url': '../../audios/cuoc-vui-co-don.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -185,7 +185,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'dem-trang-tinh-yeu.mp3',
+    'url': '../../audios/dem-trang-tinh-yeu.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -195,7 +195,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'hom-nay-em-cuoi-roi.mp3',
+    'url': '../../audios/hom-nay-em-cuoi-roi.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -205,7 +205,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'moi-tinh-chieu-mua-bay.mp3',
+    'url': '../../audios/moi-tinh-chieu-mua-bay.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -215,7 +215,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'mong-manh-tinh-ve.mp3',
+    'url': '../../audios/mong-manh-tinh-ve.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -225,7 +225,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'mua-thang-sau-remix.mp3',
+    'url': '../../audios/mua-thang-sau-remix.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -235,7 +235,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'nguoi-yeu-cu.mp3',
+    'url': '../../audios/nguoi-yeu-cu.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -245,7 +245,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'song-xa-anh-chang-de-dang.mp3',
+    'url': '../../audios/song-xa-anh-chang-de-dang.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -255,7 +255,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'tat-ca-se-thay-anh.mp3',
+    'url': '../../audios/tat-ca-se-thay-anh.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -265,7 +265,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'thanh-pho-buon.mp3',
+    'url': '../../audios/thanh-pho-buon.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -275,7 +275,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'thu-cuoi.mp3',
+    'url': '../../audios/thu-cuoi.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -285,7 +285,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'tim-lai-bau-troi.mp3',
+    'url': '../../audios/tim-lai-bau-troi.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -295,7 +295,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'trang-giay-trang.mp3',
+    'url': '../../audios/trang-giay-trang.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -305,7 +305,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'tung-yeu.mp3',
+    'url': '../../audios/tung-yeu.mp3',
     'genre': 'Pop',
     'duration': ''
   },
@@ -315,7 +315,7 @@ export const Musics =[
     'artist': 'artist artist',
     'album': '',
     'thumbnil_url': 'https://picsum.photos/100/100',
-    'url': 'ngay-mai-nguoi-ta-lay-chong.mp3',
+    'url': '../../audios/ngay-mai-nguoi-ta-lay-chong.mp3',
     'genre': 'Pop',
     'duration': ''
   }
