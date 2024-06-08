@@ -17,7 +17,6 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeDownIcon from '@mui/icons-material/VolumeDown'
-import VolumeMuteIcon from '@mui/icons-material/VolumeMute'
 import RepeatIcon from '@mui/icons-material/Repeat'
 import RepeatOneIcon from '@mui/icons-material/RepeatOne'
 import ShuffleIcon from '@mui/icons-material/Shuffle'
@@ -25,6 +24,7 @@ import ShuffleIcon from '@mui/icons-material/Shuffle'
 function Home() {
 
   const mediaAudioRef = useRef(null)
+  const mediaVideoRef = useRef(null)
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [isRepeat, setIsRepeat] = useState(false)
@@ -32,24 +32,47 @@ function Home() {
   const [currentSong, setCurrentSong] = useState(0)
   const [value, setValue] = useState(30)
   const [stateVolume, setStateVolume] = useState(false)
+  const [playedSongs, setPlayedSongs] = useState([])
 
   const handleIsPlaying = () => {
     if (!isPlaying) {
       mediaAudioRef.current.play()
+      mediaVideoRef.current.play()
+      mediaVideoRef.current.loop = true
+      mediaVideoRef.current.playbackRate = 1.25
     } else {
       mediaAudioRef.current.pause()
+      mediaVideoRef.current.pause()
     }
     setIsPlaying(!isPlaying)
   }
 
+  const getNextSong = () => {
+    if (isShuffle) {
+      let nextSong
+      do {
+        nextSong = Math.floor(Math.random() * Musics.length)
+      } while (playedSongs.includes(nextSong))
+      setPlayedSongs([...playedSongs, nextSong])
+      return nextSong
+    } else {
+      return (currentSong + 1) % Musics.length
+    }
+  }
+
 
   const handleNext = () => {
-    setCurrentSong(next => (next >= Musics.length - 1 ? 0 : next + 1))
+    setCurrentSong(getNextSong())
   }
 
 
   const handlePrev = () => {
-    setCurrentSong(prev => (prev <= 0 ? Musics.length - 1 : prev - 1))
+    if (isShuffle) {
+      setPlayedSongs(playedSongs.slice(0, -1))
+      setCurrentSong(playedSongs[playedSongs.length - 2] || 0)
+    } else {
+      setCurrentSong((prev) => (prev - 1 + Musics.length) % Musics.length)
+    }
   }
 
 
@@ -60,26 +83,32 @@ function Home() {
     }
   }, [currentSong, isPlaying])
 
+
   const handleEnd = () => {
-    // if (isShuffle) {
-    //   handleShuffle()
-    // } else {
-    //   handleNext()
-    // }
-    handleNext()
+    if (isRepeat) {
+      mediaAudioRef.current.currentTime = 0
+      mediaAudioRef.current.play()
+    } else {
+      handleNext()
+    }
 
   }
+
 
   const handleSliderChange = (event, newValue) => {
     mediaAudioRef.current.volume = newValue / 100
     setValue(newValue)
   }
 
+
+  const handleStateVolume = () => {
+    setStateVolume(!stateVolume)
+  }
+
+
   const handleShuffle = () => {
-    // if (!isShuffle) {
-    //   setCurrentSong(Math.floor(Math.random() * Musics.length))
-    // }
-    // setIsShuffle(!isShuffle)
+    setIsShuffle(!isShuffle)
+    setPlayedSongs([])
   }
 
 
@@ -97,6 +126,7 @@ function Home() {
     <Box sx={{ width: '100%', height: '100vh' }}>
       <Box sx={{ width: '100%', height: '100vh' }}>
         <CardMedia
+          ref={mediaVideoRef}
           component='video'
           src='../../videos/Studio_night.mp4'
           sx={{
@@ -183,18 +213,29 @@ function Home() {
 
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Tooltip title="Volume" placement="top">
-                  <IconButton>
-                    <VolumeUpIcon sx={{ color: 'text.primary' }} />
+                  <IconButton onClick={handleStateVolume}>
+                    {
+                      value <= 30 ?
+                        <VolumeDownIcon sx={{ color: 'text.primary' }} />
+                        :
+                        <VolumeUpIcon sx={{ color: 'text.primary' }} />
+                    }
                   </IconButton>
                 </Tooltip>
-                <Slider
-                  style={{ width: 100 }}
-                  size="small"
-                  value={value}
-                  onChange={handleSliderChange}
-                  aria-labelledby="input-slider"
-                  valueLabelDisplay="auto"
-                />
+                {
+                  stateVolume ?
+                    <Slider
+                      style={{ width: 100 }}
+                      size="small"
+                      step={1}
+                      value={value}
+                      onChange={handleSliderChange}
+                      aria-labelledby="input-slider"
+                      valueLabelDisplay="auto"
+                    />
+                    :
+                    ''
+                }
               </Box>
 
               <Tooltip title="Shuffle" placement="top">
