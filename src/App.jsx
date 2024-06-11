@@ -1,10 +1,11 @@
-import Home from './pages/Home'
+// import Home from './pages/Home'
+import MusicPlayer from './pages/MusicPlayer'
 
 function App() {
 
   return (
     <>
-      <Home />
+      <MusicPlayer />
     </>
   )
 }
