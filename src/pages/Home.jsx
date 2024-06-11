@@ -28,14 +28,6 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import Menu from '@mui/material/Menu'
 
 
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione'
-]
-const ITEM_HEIGHT = 48
-
 function Home() {
 
   const mediaAudioRef = useRef(null)
@@ -136,12 +128,14 @@ function Home() {
     setIsRepeat(!isRepeat)
   }
 
+  // Handle select theme
   const [selectTheme, setSelectTheme] = useState(10)
-
   const handleSelectTheme = (event) => {
     setSelectTheme(event.target.value)
   }
 
+
+  // Handle setting icon and more icon
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -207,7 +201,6 @@ function Home() {
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-
               {/* Home */}
               <Tooltip title="Home" placement="top">
                 <IconButton>
@@ -298,32 +291,112 @@ function Home() {
               </Tooltip>
 
               {/* Select theme */}
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+              <FormControl variant="standard" sx={{ m: 1, minWidth: 120, display: { xs: 'none', sm: 'block' } }}>
                 <Select
                   id="slect-theme"
                   value={selectTheme}
                   onChange={handleSelectTheme}
                   sx={{ '&.MuiInputBase-root': { fontSize: '14px' } }}
                 >
-                  <MenuItem sx={{ '&.MuiMenuItem-root': { bgcolor: 'violet' } }} value={10}>Theme 1</MenuItem>
+                  <MenuItem value={10}>Theme 1</MenuItem>
                   <MenuItem value={20}>Theme 2</MenuItem>
                   <MenuItem value={30}>Theme 3</MenuItem>
                 </Select>
               </FormControl>
             </Box>
 
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Tooltip title="Setting" placement="top">
-                <IconButton onClick={handlePrev}>
+            {/* ============ */}
+            <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+              <Box>
+                <IconButton
+                  aria-label="more"
+                  id="more-button"
+                  aria-controls={open ? 'more-menu' : undefined}
+                  aria-expanded={open ? 'true' : undefined}
+                  aria-haspopup="true"
+                  onClick={handleClick}
+                >
                   <SettingsIcon sx={{ color: 'text.primary' }} />
                 </IconButton>
-              </Tooltip>
+                <Menu
+                  id="more-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'more-button'
+                  }}
+                  // custom box paper
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                  }}
+                  transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right'
+                  }}
+                  slotProps={{
+                    paper: {
+                      sx: {
+                        borderRadius: '8px',
+                        backdropFilter: 'blur(24px)',
+                        bgcolor: 'hsla(0,0%,7%,.75)',
+                        border: '1px solid hsla(0,0%,100%,.2)'
+                      }
+                    }
+                  }}
+                >
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+              </Box>
 
-              <Tooltip title="More" placement="top">
-                <IconButton onClick={handlePrev}>
+              {/* More Icon */}
+              <Box>
+                <IconButton
+                  aria-label="more"
+                  id="more-button"
+                  aria-controls={open ? 'more-menu' : undefined}
+                  aria-expanded={open ? 'true' : undefined}
+                  aria-haspopup="true"
+                  onClick={handleClick}
+                >
                   <MoreVertIcon sx={{ color: 'text.primary' }} />
                 </IconButton>
-              </Tooltip>
+                <Menu
+                  id="more-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'more-button'
+                  }}
+                  // custom box paper
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                  }}
+                  transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right'
+                  }}
+                  slotProps={{
+                    paper: {
+                      sx: {
+                        borderRadius: '8px',
+                        backdropFilter: 'blur(24px)',
+                        bgcolor: 'hsla(0,0%,7%,.75)',
+                        border: '1px solid hsla(0,0%,100%,.2)'
+                      }
+                    }
+                  }}
+                >
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+              </Box>
 
             </Box>
           </Box>
