@@ -9,6 +9,9 @@ import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Slider from '@mui/material/Slider'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 
 import HomeIcon from '@mui/icons-material/Home'
 import SkipNextIcon from '@mui/icons-material/SkipNext'
@@ -20,6 +23,18 @@ import VolumeDownIcon from '@mui/icons-material/VolumeDown'
 import RepeatIcon from '@mui/icons-material/Repeat'
 import RepeatOneIcon from '@mui/icons-material/RepeatOne'
 import ShuffleIcon from '@mui/icons-material/Shuffle'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import SettingsIcon from '@mui/icons-material/Settings'
+import Menu from '@mui/material/Menu'
+
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione'
+]
+const ITEM_HEIGHT = 48
 
 function Home() {
 
@@ -121,6 +136,21 @@ function Home() {
     setIsRepeat(!isRepeat)
   }
 
+  const [selectTheme, setSelectTheme] = useState(10)
+
+  const handleSelectTheme = (event) => {
+    setSelectTheme(event.target.value)
+  }
+
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
 
   return (
     <Box sx={{ width: '100%', height: '100vh' }}>
@@ -165,19 +195,20 @@ function Home() {
               padding: '0 16px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
+              justifyContent: { xs: 'center', sm: 'space-between' },
               borderRadius: '8px',
               backdropFilter: 'blur(24px)',
               bgcolor: 'hsla(0,0%,7%,.75)',
               border: '1px solid hsla(0,0%,100%,.2)'
             }}
           >
-            <Box sx={{ fontSize: '16px' }}>
+            <Box sx={{ fontSize: '16px', display: { xs: 'none', sm: 'block' } }}>
               <HandleTime />
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
 
+              {/* Home */}
               <Tooltip title="Home" placement="top">
                 <IconButton>
                   <HomeIcon sx={{ color: 'text.primary' }} />
@@ -186,12 +217,14 @@ function Home() {
 
               <Divider orientation="vertical" variant="middle" flexItem />
 
+              {/* Prev */}
               <Tooltip title="Prev" placement="top">
                 <IconButton onClick={handlePrev}>
                   <SkipPreviousIcon sx={{ color: 'text.primary' }} />
                 </IconButton>
               </Tooltip>
 
+              {/* Play or Pause */}
               <Tooltip title={ isPlaying ? 'pause' : 'play' }placement="top">
                 <IconButton onClick={handleIsPlaying}>
                   {
@@ -203,6 +236,7 @@ function Home() {
                 </IconButton>
               </Tooltip>
 
+              {/* Next */}
               <Tooltip title="Next" placement="top">
                 <IconButton onClick={handleNext}>
                   <SkipNextIcon sx={{ color: 'text.primary' }} />
@@ -211,6 +245,7 @@ function Home() {
 
               <Divider orientation="vertical" variant="middle" flexItem />
 
+              {/* Volume */}
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Tooltip title="Volume" placement="top">
                   <IconButton onClick={handleStateVolume}>
@@ -238,6 +273,7 @@ function Home() {
                 }
               </Box>
 
+              {/* Shuffle */}
               <Tooltip title="Shuffle" placement="top">
                 <IconButton onClick={handleShuffle}>
                   {
@@ -249,6 +285,7 @@ function Home() {
                 </IconButton>
               </Tooltip>
 
+              {/* Repeat */}
               <Tooltip title="Repeat" placement="top">
                 <IconButton onClick={handleRepeat}>
                   {
@@ -260,9 +297,35 @@ function Home() {
                 </IconButton>
               </Tooltip>
 
+              {/* Select theme */}
+              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                <Select
+                  id="slect-theme"
+                  value={selectTheme}
+                  onChange={handleSelectTheme}
+                  sx={{ '&.MuiInputBase-root': { fontSize: '14px' } }}
+                >
+                  <MenuItem sx={{ '&.MuiMenuItem-root': { bgcolor: 'violet' } }} value={10}>Theme 1</MenuItem>
+                  <MenuItem value={20}>Theme 2</MenuItem>
+                  <MenuItem value={30}>Theme 3</MenuItem>
+                </Select>
+              </FormControl>
             </Box>
 
-            <Box>00:00</Box>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Tooltip title="Setting" placement="top">
+                <IconButton onClick={handlePrev}>
+                  <SettingsIcon sx={{ color: 'text.primary' }} />
+                </IconButton>
+              </Tooltip>
+
+              <Tooltip title="More" placement="top">
+                <IconButton onClick={handlePrev}>
+                  <MoreVertIcon sx={{ color: 'text.primary' }} />
+                </IconButton>
+              </Tooltip>
+
+            </Box>
           </Box>
         </Box>
       </Box>
