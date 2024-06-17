@@ -1,19 +1,20 @@
 <?php
+namespace Thenam2kx\Backend\Common;
+use Doctrine\DBAL\DriverManager;
 class Model {
-  protected $host = 'localhost';
-  protected $dbname = 'test-db';
-  protected $username = 'root';
-  protected $password = '';
-  public $conn;
+  protected $conn;
 
   public function __construct() {
-    try {
-      $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      echo 'thanh cong';
-    } catch (PDOException $e) {
-      echo 'Connection fail: '.$e->getMessage();
-    }
+    $connectionParams = [
+      'dbname' => $_ENV['DB_NAME'],
+      'user' => $_ENV['DB_USERNAME'],
+      'password' => $_ENV['DB_PASSWORD'],
+      'host' => $_ENV['DB_HOST'],
+      'port' => $_ENV['DB_PORT'],
+      'driver' => $_ENV['DB_DRIVER'],
+    ];
+    $this->conn = DriverManager::getConnection($connectionParams);
+  
   }
 
   public function __destruct() {

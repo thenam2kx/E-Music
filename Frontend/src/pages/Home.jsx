@@ -291,7 +291,7 @@ function Home() {
               </Tooltip>
 
               {/* Select theme */}
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120, display: { xs: 'none', sm: 'block' } }}>
+              {/* <FormControl variant="standard" sx={{ m: 1, minWidth: 120, display: { xs: 'none', sm: 'block' } }}>
                 <Select
                   id="slect-theme"
                   value={selectTheme}
@@ -302,7 +302,7 @@ function Home() {
                   <MenuItem value={20}>Theme 2</MenuItem>
                   <MenuItem value={30}>Theme 3</MenuItem>
                 </Select>
-              </FormControl>
+              </FormControl> */}
             </Box>
 
             {/* ============ */}
