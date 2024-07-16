@@ -175,7 +175,7 @@ function Home() {
         <Box
           sx={{
             position: 'fixed',
-            bottom: '100px',
+            bottom: '20px',
             left: '0px',
             height: '48px',
             width: '100%',
